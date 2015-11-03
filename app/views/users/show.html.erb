@@ -1,0 +1,33 @@
+<div id="profile">
+	<h1>All searches</h1>
+	<%= @user.email %>
+	<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+
+
+	<table class="u-full-width">
+				<thead>
+					<tr>
+						<th>Donor</th>
+						<th>Recipient</th>
+						<th>Since year</th>
+						<th>Contributions</th>
+					</tr>
+				</thead>
+				<tbody>
+
+		<% @searches.each do |search| %>
+					<tr>
+						<% if search.year != nil %>
+							<td><%= search.organization %></td>
+							<td><%= search.politician %></td>
+							<td><%= search.year %></td>
+							<td>$<%= search.total %></td>
+						<% end %>
+					</tr>
+		<% end %>
+
+		</tbody>
+	</table>
+
+
+</div>

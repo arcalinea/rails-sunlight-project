@@ -14,3 +14,29 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+  $('#search #new_search').submit(function(e){
+  	e.preventDefault();
+  	var results = $(this).serializeArray()
+  	var url = $(this).attr("action");
+  	var method = $(this).attr("method");
+  	
+  	console.log(results)
+  	console.log(url)
+  	console.log(method)
+
+  	$.ajax({
+  		url: url,
+  		method: method,
+  		data: results
+  	})
+  	.done(function(response){
+  		console.log("Response: " + response);
+  		$(response).appendTo('#search-results');
+  	})
+    // $('#search #new_search').reset();
+  });
+
+});
+

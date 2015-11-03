@@ -1,0 +1,260 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+/*
+@import "bootstrap-sprockets";
+@import "bootstrap";
+ 
+*/
+
+.container {
+  /*margin: 20px auto;*/
+  position: relative;
+  margin-top: 15%;
+  border-top: 15%;
+  width: 900px;
+  height: 400px;
+  padding: 20px 20px 20px 20px;
+  background: linear-gradient(#EAE8D7, #A9EAE8);
+}
+.container h1, p {
+	text-align: center;
+	margin-top: 10%;
+}
+
+.container h1 {
+		padding-top: 10%;
+}
+
+.container p {
+	font-size: 1.4em;
+}
+
+th {
+  text-align: left;
+}
+
+#main-menu {
+ width: 100%;
+ background-color: #EAE8D7;
+ padding: 15px 15px 1px 20px;
+}
+
+#main-menu li {
+	display: inline;
+	text-decoration: none;
+	padding: 10px;
+	font-size: 1.2em;
+}
+
+#main-menu li a{
+	text-decoration: none;
+}
+
+#main-menu ul {
+	margin-left: 5%;
+}
+
+#main-menu ul li:hover {
+	background: #f6f6f6;
+}
+
+#login-register {
+	margin: auto;
+	margin-left: 37%;
+	width: 36%;
+}
+
+#login-register .button {
+	width: 200px;
+	background-color: white;
+	margin: 5%;
+}
+
+#login-form {
+	background: linear-gradient(#EAE8D7, #A9EAE8);
+	margin: auto;
+	margin-top: 5%;
+	width: 400px;
+	height: 400px;
+	border-radius: 25px;
+}
+
+#login-form form{
+	position: relative;
+	margin-top: 5%;
+	margin-left: 25%;
+}
+#login-form form .button{
+	background-color: white;
+	margin-left: 15%;
+}
+#login-form h3 {
+	position: relative;
+	text-align: center;
+	padding-top: 5%;
+}
+#login-form p {
+	position: relative;
+	text-align: center;
+}
+
+
+#register-form {
+	background: linear-gradient(#EAE8D7, #A9EAE8);
+	margin: auto;
+	margin-top: 5%;
+	width: 400px;
+	height: 400px;
+	border-radius: 25px;
+}
+
+#register-form form{
+	position: relative;
+	margin-top: 5%;
+	margin-left: 25%;
+}
+#register-form form .button{
+	background-color: white;
+	margin-left: 15%;
+}
+#register-form h3 {
+	position: relative;
+	text-align: center;
+	padding-top: 5%;
+}
+
+#search {
+	background: linear-gradient(#EAE8D7, #A9EAE8);
+	width: 100%;
+	height: 100%;
+	float: left;
+}
+#search form{
+	position: relative;
+	margin-left: 15%;
+	margin-bottom: 5%;
+	padding-bottom: 15%;
+}
+#search form input {
+	width: 250px;
+}
+#search .submit input {
+	background-color: white;
+	width: 150px;
+	margin-left: 18px;
+}
+#search h1 {
+	position: relative;
+	text-align: left;
+	font-size: 1.9em;
+	margin-left: 14%;
+	padding-top: 4%;
+}
+#search h5 {
+	position: relative;
+	text-align: center;
+	padding-top: 2%;
+}
+
+#search-results {
+	position: absolute;
+	padding: 2%;
+	border-radius: 20px;
+	width: 40%;
+	height: 100%;
+	background-color: white;
+	top: 20%;
+	right: 10%;
+}
+
+#results {
+	width: 100%;
+	height: 60px;
+}
+#results p {
+	position: relative;
+	text-align: center;
+	padding-top: 2%;
+}
+
+#profile {
+	background: linear-gradient(#EAE8D7, #A9EAE8);
+	width: 100%;
+	height: 100%;
+	padding-bottom: 5%;
+	text-align: center;
+}
+#profile table {
+	width: 60%;
+	margin: auto;
+}
+#profile table thead tr th {
+	border-bottom: 1px solid black;
+	padding: 5px 5px 5px 5px;
+	text-align: center;
+}
+#profile table tbody tr td {
+	border: 1px solid black;
+	padding: 5px 0px 0px 5px;
+	text-align: center;
+}
+
+.search-results table {
+	width: 30%;
+	margin: auto;
+}
+.search-results table thead tr th {
+	border-bottom: 1px solid black;
+	padding: 5px 5px 5px 5px;
+	text-align: center;
+}
+.search-results table tbody tr td {
+	border: 1px solid black;
+	padding: 5px 0px 0px 5px;
+	text-align: center;
+}
+
+.search-results table tbody tr td:nth-child(2) {
+	text-align: left;
+	padding-left: 8%;
+}
+
+.sunlight-blog {
+  width: 100%;
+  height: 700px;
+  padding: 20px 20px 20px 20px;
+  background: linear-gradient(#EAE8D7, #A9EAE8);
+}
+
+.sunlight-blog h1 {
+	text-align: center;
+	font-size: 1.6em;
+}
+
+.search-results {
+	width: 100%;
+  height: 700px;
+  padding: 20px 20px 20px 20px;
+  background: linear-gradient(#EAE8D7, #A9EAE8);
+}
+
+.search-results h1 {
+	text-align: center;
+	font-size: 1.8em;
+}
+
