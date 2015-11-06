@@ -38,6 +38,10 @@ class Search < ActiveRecord::Base
 		# url = URI.parse(encoded)
 
 		contributions = self.class.get(url, :query => query)
+		 p "*" * 80
+		 p contributions
+		 p "*" * 80
+
 
 		donations = []
 		contributions.each do |result|
@@ -47,6 +51,10 @@ class Search < ActiveRecord::Base
 		total = donations.inject(:+)
 
 		return total
+
+		p "*" * 80
+		 p total
+		 p "*" * 80
 	end
 
 	def total=(total)
