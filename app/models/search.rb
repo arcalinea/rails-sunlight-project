@@ -31,17 +31,19 @@ class Search < ActiveRecord::Base
   	politician = self.politician
   	organization = escape_ampersand(self.organization)
   	years = search_years(self.year)
-		url = "/contributions.json"
 
-		query = { "amount" => "3E|500", "cycle" => years, "for_against" => "for", ":organization_ft" => organization, "recipient_ft" => politician, "apikey" => ENV['API_KEY']}
-		# encoded = URI.encode(api_url)
-		# url = URI.parse(encoded)
+		# url = "/contributions.json"
+		# query = { "amount" => "3E|500", "cycle" => years, "for_against" => "for", ":organization_ft" => organization, "recipient_ft" => politician, "apikey" => ENV['API_KEY']}
+		# contributions = self.class.get(url, :query => query)
 
-		contributions = self.class.get(url, :query => query)
-		 p "*" * 80
+		api_url = "http://transparencydata.com/api/1.0/contributions.json?amount=%3E|500&cycle=#{years}&for_against=for&organization_ft=#{organization}&recipient_ft=#{politician}&apikey=#{ENV['API_KEY']}"
+		encoded = URI.encode(api_url)
+		url = URI.parse(encoded)
+		contributions = HTTParty.get(url)
+
+		p "&& CONTRIBUTIONS &&" * 10
 		 p contributions
 		 p "*" * 80
-
 
 		donations = []
 		contributions.each do |result|

@@ -8,6 +8,11 @@ class SearchesController < ApplicationController
 	def create
 		@search = Search.new(politician: params[:search][:politician], organization: params[:search][:organization], user_id: current_user.id, year: params[:search][:year])
 		total = @search.total_contributions.to_s
+
+		 p "CONTROLLER TOTAL &" * 20
+		 p total
+		 p "&" * 80
+
 		@total = comma_separate(total)
 		@search[:total] = @total
 
