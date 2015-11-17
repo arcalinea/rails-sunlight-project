@@ -10,8 +10,6 @@ class Search < ActiveRecord::Base
 
   belongs_to :user
 
-  # API_KEY = "3ece7eea9ca541f8924a1ee53fd174a8"
-
   def search_years(year)
   	year.to_i
 	  current_cycle = 2015 + 1
@@ -27,10 +25,10 @@ class Search < ActiveRecord::Base
     name.gsub(/&/, '%26')
   end
 
-  def total_contributions
-  	politician = self.politician
-  	organization = escape_ampersand(self.organization)
-  	years = search_years(self.year)
+	def total_contributions
+	  	politician = self.politician
+	  	organization = escape_ampersand(self.organization)
+	  	years = search_years(self.year)
 
 		# url = "/contributions.json"
 		# query = { "amount" => "3E|500", "cycle" => years, "for_against" => "for", ":organization_ft" => organization, "recipient_ft" => politician, "apikey" => ENV['API_KEY']}
@@ -41,22 +39,13 @@ class Search < ActiveRecord::Base
 		url = URI.parse(encoded)
 		contributions = HTTParty.get(url)
 
-		p "&& CONTRIBUTIONS &&" * 10
-		 p contributions
-		 p "*" * 80
-
 		donations = []
 		contributions.each do |result|
 			donations << result["amount"].to_i
 		end
 
 		total = donations.inject(:+)
-
 		return total
-
-		p "*" * 80
-		 p total
-		 p "*" * 80
 	end
 
 	def total=(total)

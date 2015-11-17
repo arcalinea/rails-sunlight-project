@@ -9,10 +9,6 @@ class SearchesController < ApplicationController
 		@search = Search.new(politician: params[:search][:politician], organization: params[:search][:organization], user_id: current_user.id, year: params[:search][:year])
 		total = @search.total_contributions.to_s
 
-		 p "CONTROLLER TOTAL &" * 20
-		 p total
-		 p "&" * 80
-
 		@total = comma_separate(total)
 		@search[:total] = @total
 
@@ -34,9 +30,7 @@ class SearchesController < ApplicationController
 
 	def organization
 		@search = Search.new(organization: params[:organization_name])
-		
 		@recipients = @search.find_top_recipients
-
 		render json: @recipients
 	end
 
