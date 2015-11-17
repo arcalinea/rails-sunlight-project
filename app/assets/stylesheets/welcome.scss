@@ -6,16 +6,17 @@
   width: 400px;
   border: solid 1px gray; 
   padding: 20px;
-  padding-bottom: 5px;
+  text-align: center;
   margin: auto;
   font-family: serif;
-  
-  h3 {
-    text-align: center;
-  }
 
   a {
     text-decoration: none;
+    font-size: 1.1em;
+  }
+
+  p {
+    margin: 10px;
   }
 }
 
