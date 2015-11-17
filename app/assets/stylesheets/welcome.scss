@@ -2,6 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.privacy-policy {
+  width: 400px;
+  border: solid 1px gray; 
+  padding: 20px;
+  padding-bottom: 5px;
+  margin: auto;
+  font-family: serif;
+  
+  h3 {
+    text-align: center;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+
 .splash-container {
     background: #3B5182;
     z-index: 1;
