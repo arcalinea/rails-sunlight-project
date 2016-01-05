@@ -5,8 +5,6 @@ require 'uri'
 class Politician < ActiveRecord::Base
 	include HTTParty
 
-  API_KEY = "3ece7eea9ca541f8924a1ee53fd174a8"
-
 	def find_politician_id
 		politician = self.politician
 		api_url = "http://transparencydata.com/api/1.0/entities.json?search=#{politician}&type=politician&apikey=#{API_KEY}"
